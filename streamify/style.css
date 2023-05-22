@@ -1,0 +1,253 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: #1a1919;
+}
+
+/* ------- Navbar ------- */
+
+nav {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #282828;
+  padding: 20px 10%;
+  transition: 0.2s;
+  z-index: 1;
+}
+
+nav h1 {
+  background: -webkit-linear-gradient(180deg, #076888 0%, #48abe0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-size: 27px;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 16px;
+  font-weight: 500;
+  margin: 25px;
+}
+
+nav ul li a:hover {
+  color: #23a6d5;
+}
+
+/* ------- Hamburger Menu ------- */
+
+nav .menu-icon {
+  cursor: pointer;
+  padding: 15px;
+  user-select: none;
+  margin-right: -10px;
+  background-color: transparent;
+}
+
+nav .menu-icon .navicon {
+  background: white;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: .2s ease-out;
+  width: 18px;
+}
+
+nav .menu-icon .navicon:before,
+nav .menu-icon .navicon:after {
+  background: white;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+nav .menu-icon .navicon:before {
+  top: 5px;
+}
+
+nav .menu-icon .navicon:after {
+  top: -5px;
+}
+
+nav .menu-btn {
+  display: none;
+}
+
+nav .menu-btn:checked~.menu {
+  max-height: 240px;
+}
+
+nav .menu-btn:checked~.menu-icon .navicon {
+  background: transparent;
+}
+
+nav .menu-btn:checked~.menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+nav .menu-btn:checked~.menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+nav .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+nav .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+@media (min-width: 1000px) {
+  nav .menu-icon {
+    display: none;
+  }
+
+  #check {
+    display: none;
+  }
+}
+
+@media (max-width: 1000px) {
+  nav {
+    height: 80px;
+  }
+
+  nav ul {
+    width: 100%;
+    height: 100vh;
+    background-color: #282828;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: 0.4s ease;
+    display: block;
+    line-height: 15px;
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, transparent, #ffffff, #23a6d5, #23a6d5, #c7c4c4, transparent) 1 0 0 0;
+  }
+
+  nav ul li {
+    margin: 50px 0px;
+  }
+
+  nav ul a {
+    font-size: 19px;
+  }
+
+  #check:checked~ul {
+    left: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    height: 70px;
+  }
+
+  nav ul {
+    top: 70px;
+  }
+}
+
+/* ------- Herosection ------- */
+
+.herosection {
+  margin: 110px 0 50px;
+  text-align: center;
+}
+
+.herosection h2 {
+  color: #f3f1f1;
+  margin: 0 20px;
+}
+
+.herosection p {
+  color: gray;
+  margin: 0 20px;
+}
+
+@media (max-width: 650px) {
+  .herosection {
+    margin: 100px 0 50px;
+  }
+
+  .herosection h2 {
+    font-size: 20px;
+  }
+
+  .herosection p {
+    font-size: 14px;
+  }
+}
+
+/* ------- Videos ------- */
+
+.videos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 50px 20px 100px;
+}
+
+.video {
+  width: 500px;
+  height: 250px;
+  object-fit: cover;
+  margin: 10px;
+}
+
+@media (max-width: 560px) {
+  .video {
+    width: 400px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 430px) {
+  .video {
+    width: 350px;
+    height: 175px;
+  }
+}
+
+@media (max-width: 330px) {
+  .video {
+    width: 300px;
+    height: 150px;
+  }
+}
+
+/* ------- Footer ------- */
+
+footer {
+  text-align: center;
+  padding: 1.2rem 2rem;
+  background: #282828;
+  margin-top: 40px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  color: #fff;
+}
