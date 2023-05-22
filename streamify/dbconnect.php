@@ -2,7 +2,7 @@
 $host = 'localhost';
 $user = 'root';
 $password = '';
-$dbname = 'netfish';
+$dbname = 'streamify';
     
 // Connect to database
 try {
